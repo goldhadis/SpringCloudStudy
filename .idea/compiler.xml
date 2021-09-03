@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="springcloud-customer-server" />
+        <module name="springcloud-customer-oauth2-server" />
+        <module name="springcloud-commons" />
+        <module name="springcloud-eureka" />
+      </profile>
+    </annotationProcessing>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="springcloud" options="" />
+      <module name="springcloud-commons" options="" />
+      <module name="springcloud-customer-oauth2-server" options="" />
+      <module name="springcloud-customer-server" options="" />
+      <module name="springcloud-eureka" options="" />
+    </option>
+  </component>
+</project>
