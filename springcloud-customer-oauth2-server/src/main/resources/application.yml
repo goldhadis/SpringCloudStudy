@@ -1,0 +1,65 @@
+server:
+  port: 8082 # ??
+
+spring:
+  application:
+    name: customer-oauth2-server # ???
+  # ???
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 123456
+    url: jdbc:mysql://1.117.52.82:3307/ww_dxb?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useUnicode=true&useSSL=false
+  # Redis
+  redis:
+    port: 6379
+    host: 1.117.52.82
+    timeout: 3000s
+    database: 1
+    password: 123456
+  # swagger
+  swagger:
+    base-package: cn.acfun
+    title: API????
+#
+# Oauth2
+client:
+  oauth2:
+    client-id: appId # ????? ID
+    secret: 123456 # ??????
+    # ????
+    grant_types:
+      - password
+      - refresh_token
+    # token ????????
+    token-validity-time: 259200 #3600
+    refresh-token-validity-time: 259200 #3600
+    # ???????
+    scopes:
+      - api
+      - all
+
+# ?? Eureka Server ????
+eureka:
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/,http://localhost:8762/eureka/,http://localhost:8763/eureka/
+
+# Mybatis
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true # ??????
+
+# ????????
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*" # ?????
+
+logging:
+  pattern:
+    console: '%d{HH:mm:ss} [%thread] %-5level %logger{50} - %msg%n'
