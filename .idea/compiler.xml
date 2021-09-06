@@ -11,16 +11,13 @@
         <module name="springcloud-customer-oauth2-server" />
         <module name="springcloud-commons" />
         <module name="springcloud-eureka" />
+        <module name="springcloud-customer-gateway" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="springcloud" options="" />
-      <module name="springcloud-commons" options="" />
-      <module name="springcloud-customer-oauth2-server" options="" />
-      <module name="springcloud-customer-server" options="" />
-      <module name="springcloud-eureka" options="" />
+      <module name="springcloud-customer-gateway" options="" />
     </option>
   </component>
 </project>
