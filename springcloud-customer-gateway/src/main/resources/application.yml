@@ -1,0 +1,47 @@
+server:
+  port: 80
+spring:
+  application:
+    name: customer-gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true # ????  ??????
+          lower-case-service-id: true #????????
+      routes:   #????
+        - id: customer-server
+          uri: lb://customer-server   #???? lb:?????
+          predicates:  #????  ??????????
+            - Path=/customer/**
+          filters:
+            - StripPrefix=1   # StripPrefix?????????????????????????????? = 1 ????/customer/    = 2 /customer/xxx/**
+
+        - id: customer-oauth2-server
+          uri: lb://customer-oauth2-server
+          predicates:
+            - Path=/auth/**
+          filters:
+            - StripPrefix=1
+
+
+secure:
+  ignore:
+    urls: # ???????
+      - /actuator/**
+      - /auth/oauth/**
+      - /customer/**
+
+
+# ?? Eureka Server ????
+eureka:
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/,http://localhost:8762/eureka/,http://localhost:8763/eureka/
+
+logging:
+  pattern:
+    console: '%d{HH:mm:ss} [%thread] %-5level %logger{50} - %msg%n'
