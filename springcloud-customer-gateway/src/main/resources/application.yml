@@ -3,6 +3,10 @@ server:
 spring:
   application:
     name: customer-gateway
+  boot:
+    admin:
+      client:
+        url: http://localhost:9083
   cloud:
     gateway:
       discovery:
@@ -23,6 +27,12 @@ spring:
             - Path=/auth/**
           filters:
             - StripPrefix=1
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
 
 
 secure:

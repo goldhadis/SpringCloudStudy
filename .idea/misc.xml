@@ -9,6 +9,7 @@
         <option value="$PROJECT_DIR$/springcloud-customer-oauth2-server/pom.xml" />
         <option value="$PROJECT_DIR$/springcloud-commons/pom.xml" />
         <option value="$PROJECT_DIR$/springcloud-customer-gateway/pom.xml" />
+        <option value="$PROJECT_DIR$/springcloud-admin-server/pom.xml" />
       </list>
     </option>
   </component>

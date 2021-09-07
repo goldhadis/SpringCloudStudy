@@ -9,6 +9,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="springcloud-customer-server" />
         <module name="springcloud-customer-oauth2-server" />
+        <module name="springcloud-admin-server" />
         <module name="springcloud-commons" />
         <module name="springcloud-eureka" />
         <module name="springcloud-customer-gateway" />

@@ -1,0 +1,28 @@
+server:
+  port: 9083 #
+
+spring:
+  application:
+    name: admin-server #
+
+
+#
+## oauth2 ????  ????????
+service:
+  name:
+    xxx-oauth-server: http://admin-server/
+
+# ?? Eureka Server ????
+eureka:
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/,http://localhost:8762/eureka/,http://localhost:8763/eureka/
+
+
+logging:
+  pattern:
+    console: '%d{HH:mm:ss} [%thread] %-5level %logger{50} - %msg%n'
+

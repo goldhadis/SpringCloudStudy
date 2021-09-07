@@ -9,21 +9,18 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>cn.acfun</groupId>
-    <artifactId>springcloud-customer-gateway</artifactId>
+    <artifactId>springcloud-admin-server</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <name>springcloud-customer-gateway</name>
-    <description>springcloud-customer-gateway</description>
+    <name>springcloud-admin-server</name>
+    <description>springcloud-admin-server</description>
     <properties>
         <java.version>1.8</java.version>
     </properties>
     <dependencies>
-        <!-- spring cloud gateway -->
         <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-gateway</artifactId>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-
-
 
         <!-- eureka client -->
         <dependency>
@@ -51,24 +48,28 @@
             <artifactId>spring-boot-configuration-processor</artifactId>
             <optional>true</optional>
         </dependency>
-        <!-- 测试依赖  -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-test</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter</artifactId>
-            <scope>test</scope>
-        </dependency>
 
-
-        <!--这里由于我的springboot版本是2.2.10.RELEASE，所以 springboot admin 也要用2.2.x版-->
+        <!-- https://mvnrepository.com/artifact/de.codecentric/spring-boot-admin-server -->
         <dependency>
             <groupId>de.codecentric</groupId>
-            <artifactId>spring-boot-admin-starter-client</artifactId>
+            <artifactId>spring-boot-admin-server</artifactId>
             <version>2.2.3</version>
+        </dependency>
+
+        <dependency>
+            <groupId>de.codecentric</groupId>
+            <artifactId>spring-boot-admin-server-ui</artifactId>
+            <version>2.2.3</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-autoconfigure</artifactId>
         </dependency>
     </dependencies>
 

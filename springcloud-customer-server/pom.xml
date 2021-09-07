@@ -70,6 +70,15 @@
             <artifactId>spring-boot-configuration-processor</artifactId>
             <optional>true</optional>
         </dependency>
+
+
+        <!--这里由于我的springboot版本是2.2.10.RELEASE，所以 springboot admin 也要用2.2.x版-->
+        <dependency>
+            <groupId>de.codecentric</groupId>
+            <artifactId>spring-boot-admin-starter-client</artifactId>
+            <version>2.2.3</version>
+        </dependency>
+
     </dependencies>
 
     <build>

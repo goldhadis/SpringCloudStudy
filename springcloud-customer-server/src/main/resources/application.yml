@@ -20,6 +20,15 @@ spring:
   swagger:
     base-package: cn.acfun
     title: API????
+  boot:
+    admin:
+      client:
+        url: http://localhost:9083
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
 
 ## Oauth2 ?????
 oauth2:
