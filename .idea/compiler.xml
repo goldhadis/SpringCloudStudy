@@ -13,6 +13,7 @@
         <module name="springcloud-commons" />
         <module name="springcloud-eureka" />
         <module name="springcloud-customer-gateway" />
+        <module name="springcloud-producer" />
       </profile>
     </annotationProcessing>
   </component>

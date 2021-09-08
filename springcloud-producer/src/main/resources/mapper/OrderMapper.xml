@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.acfun.springcloudproducer.mapper.OrderMapper">
+    <resultMap id="orderRet" type="Order">
+        <id property="orderId" column="order_id"></id>
+        <result property="orderName"   column="order_name"></result>
+        <result property="orderMount" column="order_mount"></result>
+        <result property="crateTime" column="crate_time"></result>
+        <result property="createBy" column="crate_by"></result>
+        <result property="updateTime" column="update_time"></result>
+        <result property="updateBy" column="update_by"></result>
+    </resultMap>
+
+
+    <select id="getOrderList" parameterType="String" resultMap="orderRet">
+        select order_id,order_name,order_mount,create_time,create_by,
+               update_time,update_by
+                from tb_order
+                <where>
+                    <if test="orderId!=null">
+                        and order_id=#{orderId}
+                    </if>
+                </where>
+    </select>
+</mapper>
