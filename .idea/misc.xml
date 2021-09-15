@@ -11,6 +11,8 @@
         <option value="$PROJECT_DIR$/springcloud-customer-gateway/pom.xml" />
         <option value="$PROJECT_DIR$/springcloud-admin-server/pom.xml" />
         <option value="$PROJECT_DIR$/springcloud-producer/pom.xml" />
+        <option value="$PROJECT_DIR$/springcloud-customer/pom.xml" />
+        <option value="$PROJECT_DIR$/springcloud-config-server/pom.xml" />
       </list>
     </option>
   </component>

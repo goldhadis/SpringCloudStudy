@@ -1,9 +1,10 @@
+
 server:
-  port: 8083 # ??
+  port: 8084 # ??
 
 spring:
   application:
-    name: producer-order # ???
+    name: customer-order # ???
   # ???
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -29,12 +30,13 @@ management:
 #
 service:
   name:
-    xxx-oauth-server: http://xxx-producer-order/
+    xxx-oauth-server: http://xxx-customer-order/
 
 # ?? Eureka Server ????
 eureka:
   instance:
-    instance-id: ${spring.application.name}:${server.port}
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka/,http://localhost:8762/eureka/,http://localhost:8763/eureka/
@@ -50,3 +52,6 @@ logging:
   pattern:
     console: '%d{HH:mm:ss} [%thread] %-5level %logger{50} - %msg%n'
 
+feign:
+  hystrix:
+    enabled: true

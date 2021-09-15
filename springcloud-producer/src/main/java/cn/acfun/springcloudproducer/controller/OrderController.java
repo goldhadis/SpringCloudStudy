@@ -1,6 +1,7 @@
 package cn.acfun.springcloudproducer.controller;
 
 
+import cn.acfun.springcloud.dto.Result;
 import cn.acfun.springcloudproducer.domain.Order;
 import cn.acfun.springcloudproducer.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,17 +12,16 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@RequestMapping("/order")
 @RestController
 public class OrderController {
 
     @Autowired
     private OrderService orderService;
 
-    @GetMapping("/list/{orderId}")
-    public List<Order> getOrderList(@PathVariable(value = "orderId") String orderId){
+    @GetMapping("/order/list/{orderId}")
+    public Result getOrderList(@PathVariable(value = "orderId") String orderId){
         List<Order> orderList = orderService.getOrderList(orderId);
-        return orderList;
+        return  new Result("200", "查询成功", orderList);
     }
 
 
