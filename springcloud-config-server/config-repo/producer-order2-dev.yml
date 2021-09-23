@@ -1,0 +1,52 @@
+server:
+  port: 8083 # ??
+
+spring:
+  application:
+    name: producer-order # ???
+  # ???
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 123456
+    url: jdbc:mysql://1.117.52.82:3307/ww_dxb?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useUnicode=true&useSSL=false
+  # Redis
+  redis:
+    port: 6379
+    host:  1.117.52.82
+    timeout: 3000s
+    password: 123456
+  boot:
+    admin:
+      client:
+        url: http://localhost:9083
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+#
+service:
+  name:
+    xxx-oauth-server: http://xxx-producer-order/
+
+# ?? Eureka Server ????
+eureka:
+  instance:
+    instance-id: ${spring.application.name}:${server.port}
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/,http://localhost:8762/eureka/,http://localhost:8763/eureka/
+
+# Mybatis
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true # ??????
+  mapper-locations: classpath*:mapper/**/*.xml
+  type-aliases-package: cn.acfun.springcloudproducer.domain
+
+logging:
+  pattern:
+    console: '%d{HH:mm:ss} [%thread] %-5level %logger{50} - %msg%n'
+
