@@ -3,17 +3,18 @@ server:
 
 spring:
   application:
-    name: config.server # ???
+    name: config-server # ???
   boot:
     admin:
       client:
         url: http://localhost:9083
   cloud:
     config:
+      label: master
       server:
         git:
           uri: https://github.com/goldhadis/SpringCloudStudy.git
-          search-paths: /springcloud-con-server/config-repo
+          search-paths: springcloud-config-server/config-repo
           username: goldhadis
           password: ILovELoL520
 management:

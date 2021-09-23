@@ -69,6 +69,12 @@
             <version>1.0-SNAPSHOT</version>
         </dependency>
 
+        <!--  config -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-config-client</artifactId>
+        </dependency>
+
         <!-- 自定义的元数据依赖 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>

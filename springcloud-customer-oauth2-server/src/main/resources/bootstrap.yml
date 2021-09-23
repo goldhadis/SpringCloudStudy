@@ -1,0 +1,7 @@
+spring:
+  cloud:
+    config:
+      name: customer-oauth2-server
+      profile: dev
+      label: master
+      uri: http://localhost:7963

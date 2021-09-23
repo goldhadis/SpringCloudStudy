@@ -8,6 +8,7 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
 @EnableAdminServer
 @EnableDiscoveryClient
+@EnableEurekaClient
 @SpringBootApplication
 public class SpringcloudAdminServerApplication {
 
